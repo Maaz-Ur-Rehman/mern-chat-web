@@ -6,9 +6,7 @@ const loginUserForSideBar = async (req, res) => {
 
         const allUser = await userModel.find({ _id: { $ne: userId } });
 
-        res.status(200).json({
-            allUser
-        })
+        res.status(200).json(allUser);
     }
     catch (err) {
         console.log(err);
