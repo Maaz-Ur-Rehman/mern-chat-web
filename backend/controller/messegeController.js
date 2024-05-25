@@ -19,7 +19,7 @@ const sendMessage = async (req, res) => {
         const newMessege = new messegeModel({
             senderId: senderId,
             receiverId: receiverId,
-            massage: messege
+            message: messege
         })
 
         if (newMessege) {
@@ -45,7 +45,7 @@ const getMesseges = async (req, res) => {
         console.log(receiverId, "receiverId")
         const conversation = await conversationModel.findOne({
             participants: { $all: [senderId, receiverId] }
-        }).populate('messages')
+        }).populate('messeges')
         // console.log(conversation, 'converstaino')
 
         if (!conversation) {
