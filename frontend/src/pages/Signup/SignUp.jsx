@@ -50,7 +50,16 @@ const SignUp = () => {
               placeholder="Enter your Confrim Password"
             />
           </div>
-          {/* <GenderCheckBox /> */}
+          <GenderCheckBox />
+
+          <a className="text-sm hover:underline hover:text-blue-600 mt-4 inline-block">
+            Already have an account?
+          </a>
+          <div>
+            <button className="btn btn-block  mt-2 border-slate-700">
+              Sign Up
+            </button>
+          </div>
         </form>
       </div>
     </div>

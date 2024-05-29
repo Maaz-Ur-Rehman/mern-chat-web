@@ -4,6 +4,8 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/Signup/SignUp";
+import SideBar from "./components/SideBar/SideBar";
+import Home from "./pages/Home/Home";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,7 +15,9 @@ function App() {
       <div className="p-4 h-screen flex items-center justify-center">
         {/* <Login />
          */}
-        <SignUp />
+        {/* <SignUp />
+         */}
+        <Home />
       </div>
     </>
   );
