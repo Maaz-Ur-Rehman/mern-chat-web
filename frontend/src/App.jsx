@@ -6,18 +6,21 @@ import Login from "./pages/Login/Login";
 import SignUp from "./pages/Signup/SignUp";
 import SideBar from "./components/SideBar/SideBar";
 import Home from "./pages/Home/Home";
-
+import { Toaster } from "react-hot-toast";
+import { Route, Routes } from "react-router-dom";
+import { UserProvider } from "../src/context/userContext";
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
       <div className="p-4 h-screen flex items-center justify-center">
-        {/* <Login />
-         */}
-        {/* <SignUp />
-         */}
-        <Home />
+        <Toaster />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
       </div>
     </>
   );

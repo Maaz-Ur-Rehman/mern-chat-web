@@ -20,7 +20,11 @@ const login = async (req, res, next) => {
             return res.status(400).json({ error: "incorrect credential" });
         }
         let token = await JwtTokenSetCookie(user._id, res);
-        res.status(200).json({ message: "login success", token: token });
+
+
+
+
+        res.status(200).json({ message: "login success", token: token, username: username });
 
     }
     catch (err) {
@@ -35,7 +39,7 @@ const login = async (req, res, next) => {
 const signup = async (req, res) => {
 
     try {
-        const { fullname, username, email, password, confirmPassword, gender } = req.body;
+        const { fullname, username, password, confirmPassword, gender } = req.body;
 
         if (password !== confirmPassword) {
             return res.status(400).json({ error: "passwords do not match" });
@@ -59,7 +63,6 @@ const signup = async (req, res) => {
             fullname: fullname,
             password: hashPass,
             username: username,
-            email: email,
             gender: gender,
             profilePic: gender === "male" ? profilePicBoy : profilePicGirl,
         })
