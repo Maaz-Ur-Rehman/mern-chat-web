@@ -15,7 +15,7 @@ export const SocketProvider=({children})=>{
     // console.log(user.user._id,"userssssssssss")
     useEffect(()=>{
         if(user){
-         const socket = io.connect("http://localhost:4000",{
+         const socket = io.connect("https://mern-chat-web.vercel.app/",{
             query:{
                 userId:user.user._id
             }
