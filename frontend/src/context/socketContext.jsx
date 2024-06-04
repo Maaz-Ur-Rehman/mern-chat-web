@@ -15,11 +15,13 @@ export const SocketProvider=({children})=>{
     // console.log(user.user._id,"userssssssssss")
     useEffect(()=>{
         if(user){
-         const socket = io.connect("https://mern-chat-web.vercel.app",{
-            query:{
-                userId:user.user._id
-            }
-         })
+            const socket = io("https://mern-chat-web.vercel.app", {
+                query: {
+                    userId: user.user._id
+                },
+                withCredentials: true,
+                transports: ['websocket']
+            });
             setSocket(socket)
 
             socket.on("getOnlineUsers",(user)=>{
