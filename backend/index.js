@@ -17,7 +17,7 @@ server.listen(port, () => {
 });
 app.use(cors({
     credentials: true,
-    origin: ["http://localhost:3000", "https://mern-chat-web.vercel.app"]
+    origin: ["http://localhost:3000", "https://chatdeveloped.netlify.app"]
 }));
 app.use(cookieParser());
 app.use(express.json());
