@@ -15,7 +15,10 @@ db.connect;;
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-app.use(cors({credentials: true, origin: true, withCredentials: true }))
+app.use(cors({
+    credentials: true,
+    origin: ["http://localhost:3000", "https://mern-chat-web.vercel.app"]
+}));
 app.use(cookieParser());
 app.use(express.json());
 
