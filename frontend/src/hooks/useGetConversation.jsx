@@ -12,7 +12,7 @@ const useGetConversation = () => {
         const getconversation=async()=>{
             try{
                 setLoading(true)
-            const response=await fetch('http://localhost:4000/api/user/', {
+            const response=await fetch('https://mern-chat-web.vercel.app/api/user/', {
                 method:"GET",
                 headers:{
                     "Content-Type":"application/json",

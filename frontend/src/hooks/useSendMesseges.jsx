@@ -14,7 +14,7 @@ const useSendMesseges = () => {
 
     try{
     setLoading(true)
-        const res=await fetch(`http://localhost:4000/api/message/sendmessege/${selectedConversation._id}`,{
+        const res=await fetch(`https://mern-chat-web.vercel.app/api/message/sendmessege/${selectedConversation._id}`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json',
