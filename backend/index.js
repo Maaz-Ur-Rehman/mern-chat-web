@@ -16,7 +16,7 @@ server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 app.use(cors({
-    credentials: true,
+    
     origin: ["http://localhost:3000", "https://chatdeveloped.netlify.app"]
 }));
 app.use(cookieParser());
