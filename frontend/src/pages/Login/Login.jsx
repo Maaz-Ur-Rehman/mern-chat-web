@@ -7,20 +7,28 @@ import {
 } from "react-router-dom";
 // import { useLoginMutation } from "../../services/authServices";
 import { useUser } from "../../context/userContext";
+import useLogin from "../../hooks/useLogin";
 // import { setUser } from "../../redux/userSlice";
 // import { useDispatch } from "react-redux";
 
 const Login = () => {
   const { setUser } = useUser();
+
+  const { login,loading}=useLogin();
   // const dispatch = useDispatch();
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
   });
-  const [login, { isLoading, isError }] = useLoginMutation();
+  // const [login, { isLoading, isError }] = useLoginMutation();
   const navigation = useNavigate();
   const handleSubmit = async (e) => {
+
+    // console.log(inputs,"inputs ")
+    const { username, password } = inputs;
     e.preventDefault();
+
+    await login(username, password)
     // const { username, password } = inputs;
     // if (username === "" || password === "") {
     //   alert("Please fill all the fields");
@@ -88,18 +96,14 @@ const Login = () => {
             {"Don't"} have an account?
           </Link>
           <div>
-            {isLoading ? (
-              <button className="btn btn-block btn-sm mt-2" disabled>
-                <span
-                  className="spinner-border spinner-border-sm"
-                  role="status"
-                  aria-hidden="true"
-                ></span>
-                Loading...
-              </button>
-            ) : (
-              <button className="btn btn-block btn-sm mt-2">Login</button>
-            )}
+            
+              <button className="btn btn-block btn-sm mt-2" disabled={loading}>
+                 {loading ?
+                 <span className="loading loading-spinner"></span>
+                 :
+                 "Login"
+                 }                   
+                </button>
           </div>
         </form>
       </div>

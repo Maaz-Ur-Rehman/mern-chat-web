@@ -3,7 +3,7 @@ const protectRoute = require('../middleware/protectRoute');
 const { loginUserForSideBar } = require('../controller/userController');
 const router = express.Router();
 
-router.get('/userSidebar', protectRoute, loginUserForSideBar)
+router.get('/', protectRoute, loginUserForSideBar)
 
 
 

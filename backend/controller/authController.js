@@ -7,7 +7,7 @@ const login = async (req, res, next) => {
     try {
 
         const { username, password } = req.body;
-        // console.log(username, password, "username")
+        console.log(username, password, "username")
         const user = await userModel.findOne({ username: username });
         // console.log(!user, "user");
         // if (!user) {
@@ -22,9 +22,9 @@ const login = async (req, res, next) => {
         let token = await JwtTokenSetCookie(user._id, res);
 
 
+        // console.log(token,"generated")
 
-
-        res.status(200).json({ message: "login success", token: token, username: username });
+        res.status(200).json({ message: "login success", token: token,user:user  });
 
     }
     catch (err) {
@@ -97,7 +97,9 @@ const signup = async (req, res) => {
 
 const logout = async (req, res) => {
     try {
-        res.clearCookie("token");
+       const data= res.clearCookie("token");
+        // console.log(data, "res")
+
         res.status(200).json({ message: "logout success" });
     }
     catch (err) {

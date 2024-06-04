@@ -21,7 +21,8 @@ const SideBar = () => {
       <SearchInput />
       <div className="divider px-3"></div>
       <Conversations />
-      <LogOutButton onClick={() => handleLogout()} />
+
+      <LogOutButton />
     </div>
   );
 };

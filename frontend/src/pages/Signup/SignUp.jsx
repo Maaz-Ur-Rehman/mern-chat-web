@@ -7,6 +7,7 @@ import useSignUp from "../../hooks/useSignUp";
 const SignUp = () => {
   const navigation = useNavigate();
   const { loading, signup } = useSignUp();
+  console.log(loading,"tyre");
   const [inputs, setInputs] = useState({
     fullname: "",
     username: "",
@@ -136,8 +137,16 @@ const SignUp = () => {
             Already have an account?
           </Link>
           <div>
-            <button className="btn btn-block  mt-2 border-slate-700">
-              Sign Up
+            <button className="btn btn-block  mt-2 border-slate-700" disabled={loading}>
+            {
+              loading ?(
+                <span
+                  className="laoding loading-spinner"></span>
+              )
+                :
+                "Sign Up"
+            }
+
             </button>
           </div>
         </form>

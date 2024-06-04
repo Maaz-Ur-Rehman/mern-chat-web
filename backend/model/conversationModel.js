@@ -7,13 +7,13 @@ const conversationSchema = new mongoose.Schema({
             ref: 'user'
         }
     ],
-    messeges: [
+    messages: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'messege'
+            ref: 'message'
         }
     ]
-}, { timestamps: true })
+}, { timestamps: true });
 
 const conversationModel = mongoose.model('conversation', conversationSchema);
 
