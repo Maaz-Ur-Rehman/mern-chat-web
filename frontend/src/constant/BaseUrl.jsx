@@ -1,1 +1,0 @@
-export const BASE_URL= "https://mern-chat-web.vercel.app"

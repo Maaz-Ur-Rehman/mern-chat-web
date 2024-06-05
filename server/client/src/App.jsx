@@ -2,13 +2,13 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Login from "./pages/Login/Login";
 import SignUp from "./pages/Signup/SignUp";
 import SideBar from "./components/SideBar/SideBar";
-import Home from "./pages/Home/Home";
   import { Toaster } from "react-hot-toast";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { UserProvider, useUser } from "../src/context/userContext";
+import { Home } from "./pages/Home/Home";
+import { Login } from "./pages/Login/Login";
 function App() {
   const [count, setCount] = useState(0);
   

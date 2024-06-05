@@ -11,7 +11,7 @@ import useLogin from "../../hooks/useLogin";
 // import { setUser } from "../../redux/userSlice";
 // import { useDispatch } from "react-redux";
 
-const Login = () => {
+export const Login = () => {
   const { setUser } = useUser();
 
   const { login,loading}=useLogin();
@@ -111,4 +111,3 @@ const Login = () => {
   );
 };
 
-export default Login;
