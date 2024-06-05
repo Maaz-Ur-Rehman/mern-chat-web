@@ -12,7 +12,7 @@ const Messege = ({messege}) => {
   // console.log(user.user._id===messege?.senderId,"messege1");
  const fromMe=user.user._id===messege.senderId
  const chatClassName=fromMe ?  "chat-end" : "chat-start";
- console.log(messege.createdAt,"created")
+//  console.log(messege.createdAt,"created")
  let formatedTime=extractTime(messege?.createdAt)
 //  console.log(formatedTime,"formatedTime")
 const profilePicture=fromMe ? selectedConversation?.profilePic :  user.user.profilePic 

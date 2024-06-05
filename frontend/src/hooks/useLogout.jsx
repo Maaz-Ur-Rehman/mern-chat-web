@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import toast from "react-hot-toast";
 import { useUser } from '../context/userContext';
+import { BASE_URL } from '../constant/BaseUrl';
 const useLogout = () => {
   const {setUser}=useUser()
     const [loading,setLoading]=useState(false);
@@ -8,7 +9,7 @@ const useLogout = () => {
         setLoading(true)
 
         try{
-         const res= await fetch('https://mern-chat-web.vercel.app/api/auth/logout',{
+         const res= await fetch(`${BASE_URL}/api/auth/logout`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'

@@ -1,6 +1,7 @@
 import {  createContext, useContext, useEffect, useState } from "react";
 import { useUser } from "./userContext";
 import io from "socket.io-client"
+import { BASE_URL } from "../constant/BaseUrl";
 const SocketContext=createContext()
 
 export const useSocketContext = ()=>{
@@ -15,7 +16,7 @@ export const SocketProvider=({children})=>{
     // console.log(user.user._id,"userssssssssss")
     useEffect(()=>{
         if(user){
-         const socket = io.connect("https://mern-chat-web.vercel.app",{
+         const socket = io.connect(`${BASE_URL}`,{
             query:{
                 userId:user.user._id
             }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import useConversation from '../zustand/useConversation'
 import { useUser } from '../context/userContext'
 import toast from 'react-hot-toast'
+import { BASE_URL } from '../constant/BaseUrl'
 
 const useSendMesseges = () => {
  const {messeges,setMesseges,selectedConversation} =useConversation()
@@ -14,7 +15,7 @@ const useSendMesseges = () => {
 
     try{
     setLoading(true)
-        const res=await fetch(`https://mern-chat-web.vercel.app/api/message/sendmessege/${selectedConversation._id}`,{
+        const res=await fetch(`${BASE_URL}/api/message/sendmessege/${selectedConversation._id}`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json',

@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import toast from "react-hot-toast";
 import { useUser } from '../context/userContext';
+import { BASE_URL } from '../constant/BaseUrl';
+
+
 const useLogin = () => {
   const [loading,setLoading] = useState()
   const {setUser} = useUser()
@@ -14,7 +17,7 @@ const useLogin = () => {
 
 
                 setLoading(true)
-                const res = await fetch("https://mern-chat-web.vercel.app/api/auth/login", {
+                const res = await fetch(`${BASE_URL }/api/auth/login`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

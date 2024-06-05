@@ -6,7 +6,7 @@ const useListenMesseges = () => {
   
     const {messeges,setMesseges,selectedConversation}=useConversation()
     const {socket}=useSocketContext()
-
+    console.log(socket,"socolkdjfsldk")
     useEffect(()=>{
         socket?.on('newMessege',(newMessege)=>{
             newMessege.shouldShake=true

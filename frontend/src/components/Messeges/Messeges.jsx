@@ -21,7 +21,7 @@ const lastMessegeRef=useRef()
       lastMessegeRef.current?.scrollIntoView({behavior:"smooth"})
     },100)
 
-    console.log(lastMessegeRef,"ref")
+    // console.log(lastMessegeRef,"ref")
 
 
   },[messeges])

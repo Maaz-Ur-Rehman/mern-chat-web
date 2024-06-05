@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { useUser } from '../context/userContext'
+import { BASE_URL } from '../constant/BaseUrl'
 
 const useGetConversation = () => {
+
 
     const [loading,setLoading]=useState(false)
     const [conversation,setConversation]=useState([])
@@ -12,7 +14,7 @@ const useGetConversation = () => {
         const getconversation=async()=>{
             try{
                 setLoading(true)
-            const response=await fetch('https://mern-chat-web.vercel.app/api/user/', {
+            const response=await fetch(`${BASE_URL}/api/user/`, {
                 method:"GET",
                 headers:{
                     "Content-Type":"application/json",
