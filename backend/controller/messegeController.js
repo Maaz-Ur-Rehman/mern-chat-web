@@ -32,6 +32,7 @@ const sendMessage = async (req, res) => {
         await Promise.all([newMessege.save(), conversation.save()])
         const reciverSocketId=getReciverSockeId(receiverId)
 
+        console.log(reciverSocketId, "reciverSocketId")
         if (reciverSocketId) {
             io.to(reciverSocketId).emit("newMessege", newMessege)
         }

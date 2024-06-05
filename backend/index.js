@@ -15,10 +15,7 @@ db.connect;;
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-app.use(cors({
-    
-    origin: ["http://localhost:3000", "https://chatdeveloped.netlify.app"]
-}));
+app.use(cors({ credentials: true, origin: "https://chatdeveloped.netlify.app", withCredentials: true }));
 app.use(cookieParser());
 app.use(express.json());
 
