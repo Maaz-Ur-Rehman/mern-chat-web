@@ -26,12 +26,11 @@ app.use('/api/auth', authRoute);
 app.use('/api/message', messageRoute);
 app.use('/api/user', userRoute);
 
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
-// Fallback to serve index.html for unknown routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+  });// Default route
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
