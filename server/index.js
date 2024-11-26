@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // Fallback to serve index.html for unknown routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.htmssl'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 app.get('/', (req, res) => {
     res.send('Hello World!');
