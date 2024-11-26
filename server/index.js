@@ -26,15 +26,11 @@ app.use('/api/auth', authRoute);
 app.use('/api/message', messageRoute);
 app.use('/api/user', userRoute);
 
-// Serve static files if needed, using __dirname
-// Serve static files from the React app
-const staticPath = path.join(__dirname, 'client', 'dist');
-app.use(express.static(staticPath));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
-// The "catchall" handler: for any request that doesn't match one above, send back React's index.html file.
 app.get('*', (req, res) => {
-    res.sendFile(path.join(staticPath, 'index.html'));
-});// Default route
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+  });// Default route
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
