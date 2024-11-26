@@ -26,11 +26,14 @@ app.use('/api/auth', authRoute);
 app.use('/api/message', messageRoute);
 app.use('/api/user', userRoute);
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
+const staticPath = path.join(__dirname, '../client/dist');
+console.log('Serving static files from:', staticPath);
+app.use(express.static(staticPath));
 
+// Catch-all route for SPA
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-  });// Default route
+    res.sendFile(path.join(staticPath, 'index.html'));
+});
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
