@@ -10,16 +10,16 @@ const db = require('./db/connectDb.js');
 const cookieParser = require('cookie-parser');
 const { app, server } = require('./socket/socket.js');
 
+// Middleware
+app.use(cors());
+app.use(cookieParser());
+app.use(express.json());
+
 // Connect to the database
 db.connect;
 
 // Start the server
 
-
-// Middleware
-app.use(cors());
-app.use(cookieParser());
-app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoute);
