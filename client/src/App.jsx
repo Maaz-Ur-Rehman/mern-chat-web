@@ -13,7 +13,7 @@ function App() {
   const [count, setCount] = useState(0);
   
   const {user}=useUser()
-  console.log(user,"useconslsdjflkds")
+  // console.log(user,"useconslsdjflkds")
   return (
     <>
       <div className="p-4 h-screen flex items-center justify-center">
@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={user ? <Home /> : <Login />} />
           <Route path="/login" element={user ? <Navigate to= "/"/> : <Login />} />
-          <Route path="/signup" element={user ?<Navigate to="/" /> : <SignUp />} />
+          <Route path="/signup" element={user ?<Navigate to="/login" /> : <SignUp />} />
         </Routes>
         </div>
     </>

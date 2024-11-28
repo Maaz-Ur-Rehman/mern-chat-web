@@ -8,6 +8,7 @@ const useGetMesseges = () => {
     const [loading,setLoading]=useState(false)
 
     const {selectedConversation,messeges,setMesseges}=useConversation()
+    console.log(messeges,"messeges")
     const {user}=useUser()
 
 

@@ -13,9 +13,10 @@ export const SocketProvider=({children})=>{
 
     const [onlineUser,setOnlineUser]=useState([])
     const {user}=useUser()
-    // console.log(user.user._id,"userssssssssss")
     useEffect(()=>{
+        // console.log(user.user._id,"userssssssssss")
         if(user){
+            // console.log(user._id,"socket running")
          const socket = io.connect(`${BASE_URL}`,{
             query:{
                 userId:user.user._id

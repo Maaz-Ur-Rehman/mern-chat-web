@@ -7,7 +7,7 @@ import useSignUp from "../../hooks/useSignUp";
 const SignUp = () => {
   const navigation = useNavigate();
   const { loading, signup } = useSignUp();
-  console.log(loading,"tyre");
+  // console.log(loading,"tyre");
   const [inputs, setInputs] = useState({
     fullname: "",
     username: "",
@@ -141,7 +141,7 @@ const SignUp = () => {
             {
               loading ?(
                 <span
-                  className="laoding loading-spinner"></span>
+                  className="loading loading-spinner"></span>
               )
                 :
                 "Sign Up"

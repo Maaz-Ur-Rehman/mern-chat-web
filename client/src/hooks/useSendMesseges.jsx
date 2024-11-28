@@ -13,6 +13,9 @@ const useSendMesseges = () => {
 
  const sendmessege=async(messege)=>{
 
+    // console.log(messege,"messege")
+    // console.log(selectedConversation._id,"selectedConversation")
+
     try{
     setLoading(true)
         const res=await fetch(`${BASE_URL}/api/message/sendmessege/${selectedConversation._id}`,{

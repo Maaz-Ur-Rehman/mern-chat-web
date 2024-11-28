@@ -74,10 +74,13 @@ const signup = async (req, res) => {
             await newUser.save();
 
             res.status(201).json({
+              user:{
                 _id: newUser._id,
                 fullname: newUser.fullname,
                 username: newUser.username,
                 profilePic: newUser.profilePic,
+                
+              },
                 token: token
             })
 
