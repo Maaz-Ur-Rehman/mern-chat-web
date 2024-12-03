@@ -22,6 +22,10 @@ const shakeClass=messege.shouldShake ? "shake" : ""
 // console.log(profilePicture, "profilePicture")
 const bgBlueColor=fromMe ? 'bg-blue-500' : ''  
 
+if (selectedConversation._id !== messege.receiverId) {
+  return null;
+}
+
   return (
     <div className={`chat ${chatClassName}`}>
       <div className="chat-image avatar">

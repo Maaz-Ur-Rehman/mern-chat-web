@@ -6,12 +6,15 @@ const Conversation = ({convarsation,emoji,lastIdx}) => {
 
  const {selectedConversation,setSelectedConversation} =useConversation()
 
+
+ 
+
  const {onlineUser}=useSocketContext()
 
  const isOnline = onlineUser.includes(convarsation._id)
 //  console.log(`isOnline: ${isOnline}`)  
 // const isSelected = false
-// console.log(selectedConversation._ id,"Id")
+console.log(selectedConversation,"Id")
  const isSelected = selectedConversation?._id==convarsation._id
   return (
     <>
