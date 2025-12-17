@@ -1,0 +1,14 @@
+
+  [
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.tadabbur.app",
+      "sha256_cert_fingerprints": [
+        "36:15:FF:89:03:FE:97:5D:ED:3F:8B:CC:69:7B:08:FB:8A:5D:93:D7:5E:6F:BA:9B:3D:65:BB:6E:FC:84:D1:C5"
+      ]
+    }
+  }
+]
+  
